@@ -19,7 +19,7 @@ func Update() {
 func run() {
 	for {
 		Update()
-		time.Sleep(time.Millisecond * 10)
+		time.Sleep(time.Millisecond)
 	}
 }
 
