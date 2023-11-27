@@ -17,9 +17,10 @@ func Update() {
 }
 
 func run() {
-	for {
+	tick := time.NewTicker(time.Microsecond)
+	defer tick.Stop()
+	for _ = range tick.C {
 		Update()
-		time.Sleep(time.Millisecond)
 	}
 }
 
@@ -38,4 +39,3 @@ func init() {
 	Update()
 	go run()
 }
-
